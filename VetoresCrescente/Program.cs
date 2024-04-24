@@ -19,6 +19,14 @@ for (int i = 0; i < size; i++)
 
         }
     }
+
+for (int i = 0; i < size; i++)
+{
+
+    if (vetor2[i] == vetor[i + 1])
+    {
+        vetor[i + 1] = vetor[i + 2];
+    }
 }
 for (int i = 0; i < size; i++)
 {
