@@ -1,21 +1,25 @@
 ﻿int size = 10, aux = 0;
 int[] vetor = new int[size];
-int[] vetor2 = new int[size];
+int[] vetor_ordenado = new int[size];
+int[] vetor_desordenado = new int[size];
+
+
 
 for (int i = 0; i < size; i++)
 {
-    vetor[i] = new Random().Next(0, 100);
-    vetor2[i] = vetor[i];
+    vetor[i] = new Random().Next(-50, -1);
+    vetor_ordenado[i] = vetor[i];
+    vetor_desordenado[i] = vetor[i];
 }
-for (int i = 0; i < size; i++)
+for (int i = size -1; i >= 0; i--)
 {
-    for (int j = i + 1; j < size; j++)
+    for (int j = i - 1; j >= 0; j--)
     {
-        if (vetor2[i] > vetor2[j])
+        if (vetor_desordenado[i] > vetor_desordenado[j])
         {
-            aux = vetor2[i];
-            vetor2[i] = vetor2[j];
-            vetor2[j] = aux;
+            aux  = vetor_desordenado[i];
+            vetor_desordenado[i] = vetor_desordenado[j];
+            vetor_desordenado[j] = aux;
 
         }
     }
@@ -31,17 +35,17 @@ Console.WriteLine("Vetor Ordenado");
 for (int i = 0; i < size; i++)
 {
 
-    Console.Write(vetor2[i] + " ");
+    Console.Write(vetor_ordenado[i] + " ");
 }
 Console.WriteLine();
 Console.WriteLine("Vetor Ordenado sem repetição");
 for (int i = 0; i < size;)
 {
-    aux = vetor2[i];
+    aux = vetor_ordenado[i];
     Console.Write(aux + " ");
 
 
-    while (i < size && vetor2[i] == aux)
+    while (i < size && vetor_ordenado[i] == aux)
     {
         i++;
     }
