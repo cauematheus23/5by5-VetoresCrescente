@@ -19,22 +19,30 @@ for (int i = 0; i < size; i++)
 
         }
     }
-
-for (int i = 0; i < size; i++)
-{
-
-    if (vetor2[i] == vetor[i + 1])
-    {
-        vetor[i + 1] = vetor[i + 2];
-    }
 }
+Console.Write("Vetor simples");
+Console.WriteLine();
 for (int i = 0; i < size; i++)
 {
     Console.Write(vetor[i] + " ");
 }
 Console.WriteLine();
+Console.WriteLine("Vetor Ordenado");
 for (int i = 0; i < size; i++)
 {
    
     Console.Write(vetor2[i] + " ");
+}
+Console.WriteLine();
+Console.WriteLine("Vetor Ordenado sem repetição");
+for (int i = 0; i < size;)
+{
+    aux = vetor2[i];
+    Console.Write(aux + " ");
+
+    
+    while (i < size && vetor2[i] == aux)
+    {
+        i++;
+    }
 }
